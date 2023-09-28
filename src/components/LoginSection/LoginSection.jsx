@@ -4,7 +4,7 @@ import Form from "../Form/Form";
 
 function LoginSection ({ name, children, isValid, onSubmit }) {
     return (
-        <section className="login">
+        <section aria-label="authorization" className="login">
             <Link to={"/"} className="login__link-home"></Link>
             <h2 className="login__title">{name === "signup" ? "Добро пожаловать!" : "Рады видеть!"}</h2>
             <Form name={name} isValid={isValid} onSubmit={onSubmit}>

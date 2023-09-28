@@ -24,6 +24,7 @@ function Register ({ name, setLoggedIn }) {
                 isInputValid={isInputValid.username}
                 error={errors.username}
                 onChange={handleChange}
+                placeholder="Введите имя"
             />
             <Input 
                 name="email"
@@ -33,6 +34,7 @@ function Register ({ name, setLoggedIn }) {
                 isInputValid={isInputValid.email}
                 error={errors.email}
                 onChange={handleChange}
+                placeholder="Введите E-mail"
             />
             <Input
                 name="password"
@@ -43,6 +45,7 @@ function Register ({ name, setLoggedIn }) {
                 isInputValid={isInputValid.password}
                 error={errors.password}
                 onChange={handleChange}
+                placeholder="Введите пароль"
             />
         </LoginSection>
     );

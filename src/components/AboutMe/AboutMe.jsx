@@ -4,7 +4,7 @@ import "./AboutMe.css";
 
 function AboutMe () {
     return (
-        <section className="about-me">
+        <section aria-label="about me" className="about-me">
             <h2 id="about-me" className="about-me__title">Студент</h2>
             <div className="about-me__container">
                 <div className="about-me__container-info">

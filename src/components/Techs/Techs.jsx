@@ -2,7 +2,7 @@ import "./Techs.css";
 
 function Techs () {
     return (
-        <section className="techs">
+        <section aria-label="technologies" className="techs">
             <h2 id="techs" className="techs__title">Технологии</h2>
             <h3 className="techs__subtitle">7 технологий</h3>
             <p className="techs__description">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>

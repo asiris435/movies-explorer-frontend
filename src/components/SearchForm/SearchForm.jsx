@@ -18,7 +18,7 @@ function SearchForm ({ isChecked, changeShortFilm }) {
     }
 
     return (
-        <section className="search">
+        <section aria-label="search" className="search">
             <div className="search__container">
                 <form noValidate className="search__form" name={"SearchForm"} value={values.search} onSubmit={onSubmit}>
                     <input type="text" placeholder="Фильм" required className="search__input" onChange={handleChange} />

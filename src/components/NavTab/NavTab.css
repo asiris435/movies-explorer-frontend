@@ -3,7 +3,7 @@
     padding: 24px 0;
 }
 
-.nav-promo__comtainer {
+.nav-promo__container {
     width: calc(276/1280*100%);
     display: flex;
     margin: 0 auto;
@@ -11,18 +11,18 @@
 }
 
 @media screen and (max-width:1023px) {
-    .nav-promo__comtainer {
+    .nav-promo__container {
         width: calc(276/768*100%);
     }
 }
 
 @media screen and (max-width:767px) {
-    .nav-promo__comtainer {
+    .nav-promo__container {
         width: calc(212/320*100%);
     }
 }
 
-.nav__promo__link {
+.nav-promo__link {
     font-size: 13px;
     font-weight: 500;
     line-height: 16px;
@@ -32,14 +32,14 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .nav__promo__link:hover {
+    .nav-promo__link:hover {
         opacity: .7;
         cursor: pointer;
     }
 }
 
 @media screen and (max-width:767px) {
-    .nav__promo__link {
+    .nav-promo__link {
         font-size: 11px;
     }
 }

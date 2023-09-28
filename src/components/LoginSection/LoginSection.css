@@ -1,19 +1,19 @@
 .login {
   width: 396px;
   margin: 0 auto;
-  padding-top: 70px;
+  padding: 70px 0  68px;
 }
 
 @media screen and (max-width: 768px) {
   .login {
-    padding-top: 232px;
+    padding: 232px 0 230px;
   }
 }
 
 @media screen and (max-width: 525px) {
   .login {
     width: calc(260/320*100%);
-    padding-top: 56px;
+    padding: 56px 0 30px;
   }
 }
 

@@ -18,7 +18,7 @@ function MoviesCard ({ name, src, trailerLink }) {
         <li className="movies__card">
             <article>
                 <Link to={trailerLink} target="_blank">
-                    <img src={src} alt="#" className="movies__image" />
+                    <img src={src} alt="Изображение кадра из фильма" className="movies__image" />
                 </Link>
                 <div className="movies__container">
                     <div className="movies__text-container">

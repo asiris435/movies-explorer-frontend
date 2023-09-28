@@ -24,7 +24,7 @@ function MoviesCardList ({ movies }) {
     }
 
     return (
-        <section className="movies">
+        <section aria-label="list of films" className="movies">
             <ul className="movies__list">
                 {result.map(data => {
                     return (

@@ -2,7 +2,7 @@ import "./AboutProject.css";
 
 function AboutProject () {
     return (
-        <section className="about__project">
+        <section aria-label="about project" className="about about__project">
             <h2 id="about-project" className="about__title">О проекте</h2>
             <div className="about__container">
                 <h3 className="about__subtitle">Дипломный проект включал 5 этапов</h3>

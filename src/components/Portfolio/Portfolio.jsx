@@ -3,7 +3,7 @@ import "./Portfolio.css";
 
 function Portfolio () {
     return (
-        <section className="portfolio">
+        <section aria-label="portfolio" className="portfolio">
             <h2 className="portfolio__title">Портфолио</h2>
             <nav className="portfolio__nav">
                 <ul className="portfolio__list">

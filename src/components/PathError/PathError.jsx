@@ -5,7 +5,7 @@ function PathError () {
     const navigate = useNavigate();
 
     return (
-        <section className="path-error">
+        <section aria-label="page not found" className="path-error">
             <div className="path-error__container">
                 <h2 className="path-error__title">404</h2>
                 <p className="path-error__text">Страница не найдена</p>
