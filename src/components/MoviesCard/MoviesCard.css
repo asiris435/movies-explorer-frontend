@@ -1,0 +1,127 @@
+.movies__card {
+    width: 100%;
+    background-color: #222222;
+}
+
+.movies__image {
+    width: 100%;
+    height: 203px;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+    .movies__image {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .movies__image {
+        height: 168px;
+    }
+}
+
+.movies__container {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0 0 6px 6px;
+    padding: 0 16px 0 16px;
+    cursor: pointer;
+}
+
+.movies__container:hover {
+    .movies__button_delete {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movies__container {
+        min-height: 72px;
+        padding: 0 14px 0 14px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .movies__container {
+        min-height: 69px;
+        
+    }
+}
+
+.movies__text-container {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.movies__text {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.73px;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 0 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .movies__text {
+        margin: 0 0 14px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .movies__text {
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+}
+
+.movies__duration {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13.31px;
+    color: #8B8B8B;
+}
+
+.movies__button {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../images/movies-button.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    margin-top: 9px;
+    cursor: pointer;
+    transition: opacity .5s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .movies__button:hover {
+        opacity: .7;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .movies__button {
+        margin: 7px -3px 0 0;
+    }
+}
+
+.movies__button_active {
+    background-image: url(../../images/movies-button-active.svg);
+}
+
+.movies__button_delete {
+    background-image: url(../../images/movies-button-delete.svg);
+    background-position: center;
+    visibility: hidden;
+}

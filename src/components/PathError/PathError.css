@@ -1,0 +1,81 @@
+.path-error {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.path-error__container {
+    text-align: center;
+    padding: 246px 0 58px;
+}
+
+@media screen and (max-width: 768px) {
+    .path-error__container {
+        padding: 407px 0 221px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .path-error__container {
+        padding: 329px 0 29px;
+    }
+}
+
+.path-error__title {
+    font-size: 140px;
+    font-weight: 400;
+    line-height: 169.43px;
+    margin: 0;
+    padding-bottom: 6px;
+}
+
+@media screen and (max-width: 525px) {
+    .path-error__title {
+        font-size: 80px;
+        line-height: 96.82px;
+        padding-bottom: 10px;
+    }
+}
+
+.path-error__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 184px;
+}
+
+@media screen and (max-width: 525px) {
+    .path-error__text {
+        font-size: 12px;
+        line-height: 14.52px;
+        padding-bottom: 286px;
+    }
+}
+
+.path-error__link {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    color: #4285F4;
+    transition: opacity .5s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .path-error__link:hover {
+        opacity: .7;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .path-error__link {
+        font-size: 12px;
+        line-height: 14.52px;
+        
+    }
+}
