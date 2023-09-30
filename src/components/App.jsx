@@ -4,12 +4,15 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import { useState } from "react";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
 
   return (
     <div className="page__content">
+      <CurrentUserContext.Provider value={currentUser}>
         <Routes>
 
         <Route path="/" element={
@@ -56,6 +59,7 @@ function App () {
           } />
 
         </Routes>
+      </CurrentUserContext.Provider>
     </div>
   );
 }
