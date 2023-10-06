@@ -1,4 +1,5 @@
 const EmailRegex = '^\\S+@\\S+\\.\\S+$';
+const MaxDurationShortFilm = 40;
 const MaxScreen = 1280;
 const MediumScreen = 1023;
 const SmallScreen = 650;
@@ -10,6 +11,7 @@ const StepMediumScreen = 2;
 
 export { 
     EmailRegex,
+    MaxDurationShortFilm,
     MaxScreen,
     MediumScreen,
     SmallScreen,
