@@ -23,8 +23,8 @@ function MoviesCardList ({ movies, onDelete, addMovie, savedMovies, isLoading, s
     function showMovies () {
         const counter = { init: InitMaxScreen, step: StepMaxScreen };
         if (window.innerWidth < MaxScreen) {
-            counter.init = InitMaxScreen;
-            counter.step = StepMaxScreen;
+            counter.init = InitMediumScreen;
+            counter.step = StepMediumScreen;
         }
         if (window.innerWidth < MediumScreen) {
             counter.init = InitMediumScreen;
