@@ -77,6 +77,10 @@
     }
 }
 
+.search__button_disabled {
+    pointer-events: none;
+}
+
 .search__error {
     min-height: 14px;
     font-size: 11px;

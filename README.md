@@ -6,7 +6,7 @@
 `/assets` — папка с файлом глобальных настроек  
 `/components` — папка с компонентами   
 `/hooks` — папка с кастомным хуком 
-`/utils` — папка с массивом картинок
+`/utils` — утилиты, помощники, константы и т.п.
   
 Остальные директории вспомогательные, создаются при необходимости разработчиком
 
@@ -14,6 +14,10 @@
 
 `npm start` — запускает сервер   
 
-## Ссылка на макет
+## Ссылка на пул реквест
 
-https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node-id=1-8436&mode=design&t=orVkWLZtgGyUborE-0
+https://github.com/asiris435/movies-explorer-frontend/pull/2
+
+## Ссылка на проект
+
+https://movies-explorer66.kaa.nomoredomainsicu.ru

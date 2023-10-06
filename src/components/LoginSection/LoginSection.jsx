@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import "./LoginSection.css";
 import Form from "../Form/Form";
 
-function LoginSection ({ name, children, isValid, onSubmit }) {
+function LoginSection ({ name, children, isValid, onSubmit, setIsError }) {
     return (
         <section aria-label="authorization" className="login">
             <Link to={"/"} className="login__link-home"></Link>
             <h2 className="login__title">{name === "signup" ? "Добро пожаловать!" : "Рады видеть!"}</h2>
-            <Form name={name} isValid={isValid} onSubmit={onSubmit}>
+            <Form name={name} isValid={isValid} onSubmit={onSubmit} setIsError={setIsError}>
                 {children}
             </Form>
             {name === "signup" ?

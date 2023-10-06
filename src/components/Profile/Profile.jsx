@@ -1,33 +1,36 @@
 import Form from "../Form/Form";
 import "./Profile.css";
 import useFormValidation from "../../hooks/useFormValidation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Input from "../Input/Input";
 import { Link } from "react-router-dom";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import { EmailRegex } from "../../utils/constants";
 
-function Profile ({ name, setLoggedIn }) {
+function Profile ({ name, outLogin, editUserProfile, setIsError, isSuccess, setSuccess, isEdit, setIsEdit }) {
+    const currentUser = useContext(CurrentUserContext);
     const { values, errors, isInputValid, isValid, handleChange, reset } = useFormValidation();
-    const [isEdit, setIsEdit] = useState(false);
 
-    function onEditProfile (evt) {
+    function onSubmit (evt) {
         evt.preventDefault();
-    }
-
-    function outLogin () {
-        setLoggedIn(false);
+        editUserProfile(values.username, values.email);
     }
 
     useEffect(() => {
-        reset({username: "Виталий", email: "pochta@yandex.ru"})
-    }, [reset]);
+        reset({ username: currentUser.name, email: currentUser.email })
+    }, [reset, currentUser, isEdit]);
 
     return (
         <section aria-label="profile" className="profile">
-            <h2 className="profile__title">{`Привет, Виталий!`}</h2>
+            <h2 className="profile__title">{`Привет, ${currentUser.name}!`}</h2>
             <Form
                 name={name}
                 isValid={isValid}
-                onSubmit={onEditProfile}
+                onSubmit={onSubmit}
+                setIsError={setIsError}
+                values={values}
+                isSuccess={isSuccess}
+                setSuccess={setSuccess}
                 isEdit={isEdit}
                 setIsEdit={setIsEdit}
             >
@@ -46,12 +49,13 @@ function Profile ({ name, setLoggedIn }) {
                 <Input 
                     selectname={name}
                     name="email"
-                    type="text"
+                    type="email"
                     title="E-mail"
                     value={values.email}
                     isInputValid={isInputValid.email}
                     error={errors.email}
                     onChange={handleChange}
+                    pattern={EmailRegex}
                     isEdit={isEdit}
                 />
             </Form>
