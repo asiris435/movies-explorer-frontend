@@ -46,8 +46,8 @@ function Movies ({ setIsError, savedMovies, addMovie }) {
     }
 
     useEffect(() => {
-        if (localStorage.allMovies && localStorage.shortfilm && localStorage.textsearch) {
-            const movies = JSON.parse(localStorage.allMovies);
+        if (localStorage.allmovies && localStorage.shortfilm && localStorage.textsearch) {
+            const movies = JSON.parse(localStorage.allmovies);
             const search = JSON.parse(localStorage.textsearch);
             const isChecked = JSON.parse(localStorage.shortfilm);
             setServerError(false);
@@ -55,7 +55,7 @@ function Movies ({ setIsError, savedMovies, addMovie }) {
             setSearchText(search);
             setIsChecked(isChecked);
             setAllMovies(movies);
-            filter(movies, search, isChecked);
+            filter(search, isChecked, movies);
         }
     }, [filter]);
 
