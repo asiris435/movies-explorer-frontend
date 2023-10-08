@@ -67,7 +67,7 @@ function Movies ({ setIsError, savedMovies, addMovie }) {
                 filter={filter}
                 moviesSearch={moviesSearch}
                 searchText={searchText}
-                allMovies={allMovies}
+                movies={allMovies}
                 setIsError={setIsError}
                 firstLogin={firstLogin} 
             />

@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import ErrorContext from "../../contexts/ErrorContext";
 import { useContext, useEffect } from "react";
 
-function SearchForm ({ isChecked, setIsChecked, filter, moviesSearch, searchText, allMovies, setIsError, savedMovies }) {
+function SearchForm ({ isChecked, setIsChecked, filter, moviesSearch, searchText, movies, setIsError, savedMovies }) {
     const { pathname } = useLocation();
     const isError = useContext(ErrorContext);
     const { values, handleChange, reset } = useFormValidation();
@@ -22,10 +22,10 @@ function SearchForm ({ isChecked, setIsChecked, filter, moviesSearch, searchText
     function changeShortFilm () {
         if (isChecked) {
             setIsChecked(false);
-            filter(values.search, false, allMovies);
+            filter(values.search, false, movies);
         } else {
             setIsChecked(true);
-            filter(values.search, true, allMovies);
+            filter(values.search, true, movies);
         }
     }
 

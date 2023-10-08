@@ -31,28 +31,18 @@ function SavedMovies ({ savedMovies, onDelete, setIsError }) {
         filter(searchText, isChecked, savedMovies);
     }, [filter, savedMovies, isChecked, searchText]);
 
-    function changeShortFilm () {
-        if (isChecked) {
-            setIsChecked(false);
-            setFirstLogin(false);
-            filter(searchText, false, savedMovies);
-        } else {
-            setIsChecked(true);
-            setFirstLogin(false);
-            filter(searchText, true, savedMovies);
-        }
-    }
-
     return (
         <>
             <SearchForm
                 isChecked={isChecked}
+                setIsChecked={setIsChecked}
                 moviesSearch={moviesSearch}
                 searchText={searchText}
-                changeShortFilm={changeShortFilm}
                 setIsError={setIsError}
                 firstLogin={firstLogin}
                 savedMovies={savedMovies}
+                filter={filter}
+                movies={savedMovies}
             />
             <MoviesCardList
                 movies={filteredMovies}
