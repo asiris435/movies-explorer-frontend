@@ -59,23 +59,15 @@ function Movies ({ setIsError, savedMovies, addMovie }) {
         }
     }, [filter]);
 
-    function changeShortFilm () {
-        if (isChecked) {
-            setIsChecked(false);
-            filter(searchText, false, allMovies);
-        } else {
-            setIsChecked(true);
-            filter(searchText, true, allMovies);
-        }
-    }
-
     return (
         <>
             <SearchForm
                 isChecked={isChecked}
+                setIsChecked={setIsChecked}
+                filter={filter}
                 moviesSearch={moviesSearch}
                 searchText={searchText}
-                changeShortFilm={changeShortFilm}
+                allMovies={allMovies}
                 setIsError={setIsError}
                 firstLogin={firstLogin} 
             />
