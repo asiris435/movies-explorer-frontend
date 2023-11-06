@@ -79,8 +79,13 @@
     visibility: hidden;
 }
 
-.profile__input-error_active {
+.profile__request-error_active {
     visibility: visible;
+}
+
+.profile__request-error_type_success {
+    visibility: visible;
+    color:  #8B8B8B;
 }
 
 .profile__button {

@@ -1,20 +1,18 @@
-import { useNavigate } from "react-router-dom";
 import LoginSection from "../LoginSection/LoginSection";
 import Input from "../Input/Input";
 import useFormValidation from "../../hooks/useFormValidation";
+import { EmailRegex } from "../../utils/constants";
 
-function Register ({ name, setLoggedIn }) {
-    const navigate = useNavigate();
+function Register ({ name, onRegistration, setIsError }) {
     const { values, errors, isInputValid, isValid, handleChange } = useFormValidation();
 
-    function onLogin (evt) {
+    function onSubmit (evt) {
         evt.preventDefault();
-        navigate("/signin");
-        setLoggedIn(true);
+        onRegistration(values.username, values.email, values.password);
     }
 
     return (
-        <LoginSection name={name} onLogin={onLogin} isValid={isValid}>
+        <LoginSection name={name} onSubmit={onSubmit} isValid={isValid} setIsError={setIsError}>
             <Input
                 name="username"
                 type="text"
@@ -23,7 +21,10 @@ function Register ({ name, setLoggedIn }) {
                 value={values.username}
                 isInputValid={isInputValid.username}
                 error={errors.username}
-                onChange={handleChange}
+                onChange={(evt) => {
+                    handleChange(evt);
+                    setIsError(false);
+                }}
                 placeholder="Введите имя"
             />
             <Input 
@@ -33,7 +34,11 @@ function Register ({ name, setLoggedIn }) {
                 value={values.email}
                 isInputValid={isInputValid.email}
                 error={errors.email}
-                onChange={handleChange}
+                onChange={(evt) => {
+                    handleChange(evt);
+                    setIsError(false);
+                }}
+                pattern={EmailRegex}
                 placeholder="Введите E-mail"
             />
             <Input
@@ -44,7 +49,10 @@ function Register ({ name, setLoggedIn }) {
                 value={values.password}
                 isInputValid={isInputValid.password}
                 error={errors.password}
-                onChange={handleChange}
+                onChange={(evt) => {
+                    handleChange(evt);
+                    setIsError(false);
+                }}
                 placeholder="Введите пароль"
             />
         </LoginSection>

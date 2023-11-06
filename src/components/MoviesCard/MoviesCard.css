@@ -11,13 +11,13 @@
     border-radius: 6px 6px 0 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .movies__image {
         height: 190px;
     }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 767px) {
     .movies__image {
         height: 168px;
     }
@@ -38,14 +38,14 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .movies__container {
         min-height: 72px;
         padding: 0 14px 0 14px;
     }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 767px) {
     .movies__container {
         min-height: 69px;
         
@@ -70,13 +70,13 @@
     margin: 0 0 16px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .movies__text {
         margin: 0 0 14px;
     }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 767px) {
     .movies__text {
         font-size: 12px;
         line-height: 14.52px;
@@ -110,7 +110,7 @@
     }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 767px) {
     .movies__button {
         margin: 7px -3px 0 0;
     }

@@ -1,20 +1,17 @@
-import { useNavigate } from "react-router-dom";
 import LoginSection from "../LoginSection/LoginSection";
 import Input from "../Input/Input";
 import useFormValidation from "../../hooks/useFormValidation";
 
-function Login ({ name, setLoggedIn }) {
-    const navigate = useNavigate();
+function Login ({ name, onLogin, setIsError }) {
     const { values, errors, isInputValid, isValid, handleChange } = useFormValidation();
 
-    function onLogin (evt) {
+    function onSubmit (evt) {
         evt.preventDefault();
-        navigate("/movies");
-        setLoggedIn(true);
+        onLogin(values.email, values.password);
     }
 
     return (
-        <LoginSection name={name} onLogin={onLogin} isValid={isValid}>
+        <LoginSection name={name} onSubmit={onSubmit} isValid={isValid} setIsError={setIsError}>
             <Input 
                 name="email"
                 type="email"
@@ -22,7 +19,10 @@ function Login ({ name, setLoggedIn }) {
                 value={values.email}
                 isInputValid={isInputValid.email}
                 error={errors.email}
-                onChange={handleChange}
+                onChange={(evt) => {
+                    handleChange(evt);
+                    setIsError(false);
+                }}
                 placeholder="Введите E-mail"
             />
             <Input
@@ -33,7 +33,10 @@ function Login ({ name, setLoggedIn }) {
                 value={values.password}
                 isInputValid={isInputValid.password}
                 error={errors.password}
-                onChange={handleChange}
+                onChange={(evt) => {
+                    handleChange(evt);
+                    setIsError(false);
+                }}
                 placeholder="Введите пароль"
             />
         </LoginSection>

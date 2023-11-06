@@ -1,30 +1,67 @@
-import { useState } from "react";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import "./SearchForm.css";
 import useFormValidation from "../../hooks/useFormValidation";
+import { useLocation } from "react-router-dom";
+import ErrorContext from "../../contexts/ErrorContext";
+import { useContext, useEffect } from "react";
 
-function SearchForm ({ isChecked, changeShortFilm }) {
-    const [isError, setIsError] = useState(false);
-    const { values, isValid, handleChange } = useFormValidation();
+function SearchForm ({ isChecked, setIsChecked, filter, moviesSearch, searchText, movies, setIsError, savedMovies }) {
+    const { pathname } = useLocation();
+    const isError = useContext(ErrorContext);
+    const { values, handleChange, reset } = useFormValidation();
+
+    useEffect(() => {
+        if ((pathname === "/saved-movies" && savedMovies.length === 0)) {
+            reset({ search: "" });
+        } else {
+            reset({ search: searchText });
+        }
+        setIsError(false);
+    }, [searchText, reset, setIsError, pathname, savedMovies]);
+
+    function changeShortFilm () {
+        if (isChecked) {
+            setIsChecked(false);
+            filter(values.search, false, movies);
+        } else {
+            setIsChecked(true);
+            filter(values.search, true, movies);
+        }
+    }
 
     function onSubmit (evt) {
         evt.preventDefault();
-        if (!isValid) {
-            setIsError(true);
-            return;
-        } else {
+        if (evt.target.search.value) {
+            moviesSearch(evt.target.search.value);
             setIsError(false);
+        } else {
+            setIsError(true);
         }
     }
 
     return (
         <section aria-label="search" className="search">
             <div className="search__container">
-                <form noValidate className="search__form" name={"SearchForm"} value={values.search} onSubmit={onSubmit}>
-                    <input type="text" placeholder="Фильм" required className="search__input" onChange={handleChange} />
-                    <button type="submit" className="search__button"></button>
+                <form noValidate className="search__form" name={"SearchForm"} onSubmit={onSubmit}>
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Фильм"
+                        required
+                        className="search__input"
+                        value={values.search || ""}
+                        onChange={(evt) => {
+                            handleChange(evt);
+                            setIsError(false);
+                        }}
+                        disabled={savedMovies ? (savedMovies.length === 0 && true) : false}
+                    />
+                    <button 
+                        type="submit" 
+                        className={`search__button ${savedMovies ? (pathname === "/saved-movies" && savedMovies.length === 0) && "search__button_disabled" : ""}`}
+                    ></button>  
                 </form>
-                <span className={`search__error ${isError && "search__error_active"}`}>{isError ? "Введите ключевое слово" : ""}</span>
+                <span className={`search__error ${isError && "search__error_active"}`}>{"«Нужно ввести ключевое слово»"}</span>
                 <FilterCheckbox isChecked={isChecked} changeShortFilm={changeShortFilm} />
             </div>
         </section>

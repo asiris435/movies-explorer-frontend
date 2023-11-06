@@ -8,14 +8,15 @@ function AboutMe () {
             <h2 id="about-me" className="about-me__title">Студент</h2>
             <div className="about-me__container">
                 <div className="about-me__container-info">
-                    <h3 className="about-me__name">Виталий</h3>
-                    <p className="about-me__job">Фронтенд-разработчик, 30 лет</p>
-                    <p className="about-me__resume">Я&nbsp;родился и&nbsp;живу в&nbsp;Саратове,
-                    закончил факультет экономики СГУ. У&nbsp;меня есть жена
-                    и&nbsp;дочь. Я&nbsp;люблю слушать музыку, а&nbsp;ещё увлекаюсь бегом.
-                    Недавно начал кодить. С 2015 года работал в&nbsp;компании &laquo;СКБ Контур&raquo;.
-                    После того, как прошёл курс по&nbsp;веб-разработке,
-                    начал заниматься фриланс-заказами и&nbsp;ушёл с&nbsp;постоянной работы.</p>
+                    <h3 className="about-me__name">Александр</h3>
+                    <p className="about-me__job">Фронтенд-разработчик, 49 лет</p>
+                    <p className="about-me__resume">Я живу в Санкт-Петербурге,
+                    образование высшее филологическое. Работал в компании "Российские железные дороги" в сфере HR.
+                    Всегда интересовался IT, когда представилась возможность сменить вид деятельности, благодаря
+                    курсам повышения квалификации, я ей воспльзовался. Планирую закрепиться и развиваться в новой,
+                    для себя, отрасли. 
+                    Я играю на гитаре, увлекаюсь авиационными симуляторами.
+                    </p>
                     <Link to={"https://github.com/asiris435"} target="_blank" className="about-me__link">Github</Link>
                 </div>
                 <img src={photo} alt="Фотография автора проекта" className="about-me__photo" />
